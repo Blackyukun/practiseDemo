@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>控制div属性</title>
+		<style>
+			#test{
+				width:500px;
+				margin: 30px auto;
+				padding: 0;
+				text-align: center;
+			}
+			#test-div{
+				width: 150px;
+				height: 150px;
+				background: black;
+				margin: 30px auto;
+				display: block;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var inputs = document.getElementsByTagName('input');
+				var div = document.getElementById('test-div');
+				var divAttr = ['width','height','background','display','display','display'];
+				var attrVal = ['300px','300px','red','none','block','block'];
+				
+				for (var i=0; i<inputs.length; i++) {
+					inputs[i].index = i;
+					inputs[i].onclick = function() {
+						if (this.index === inputs.length-1) {
+							div.style[divAttr[this.index]] = attrVal[this.index];
+							div.style.cssText = '';
+						}
+						div.style[divAttr[this.index]] = attrVal[this.index];
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<input type="button" value="增宽">
+			<input type="button" value="增高">
+			<input type="button" value="变色">
+			<input type="button" value="隐藏">
+			<input type="button" value="显示">
+			<input type="button" value="重置">
+			<div id="test-div">
+			</div>
+		</div>
+		
+	</body>
+</html>
