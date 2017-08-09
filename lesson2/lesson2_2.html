@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>点击div，显示div的innerHTML</title>
+		<style>
+			body{font:12px/1.5 "微软雅黑"}
+			#test{
+				width: 500px;
+				margin: 0 auto;
+			}
+			#test div{
+				margin-bottom: 10px;
+				padding: 10px;
+				text-indent: 2em;
+				cursor: pointer;
+				border: 1px solid #273f54;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var divs = document.getElementById('test').children;
+				
+				for (var i=0; i<divs.length; i++) {
+					divs[i].onclick = function() {
+						alert(this.innerHTML);
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<div>
+				<strong>如果没有体育竞技</strong>，就不能算是真正的运动会。所以动感斗球将再度回归，而且比以前更好玩！这项充满未来感的足球运动将带你进入快节奏的3v3游戏，在里约热内卢的弗格体育场或是全新的悉尼海港竞技场展开角逐。
+			</div>
+			<div>
+				玩家可以选择两种模式：<i>动感斗球或全新的动感斗球杯。杯赛中的定级赛、竞技等级、排行榜、竞技点数等设计将为你带来更刺激的竞技体验。玩家可以选择两种模式：动感斗球或全新的动感斗球杯。</i>
+			</div>
+			<div>
+				活动一下筋骨，调高旋律音量，用塞满了<strong style="color: red">皮肤、语音、表情、姿势等</strong>全新物品的夏季运动会补给来庆祝竞技的盛会！你还可以使用游戏货币，以优惠的价格购买去年夏季运动会的传奇皮肤。共计150余件个性化物品等你来拿，机会不容错过。
+			</div>
+			<div>
+				最火热的运动盛会将带来更多的趣味华丽回归！今年，我们将以全新的动感斗球竞技场、排行榜和竞技比赛来发扬竞技精神。解锁超过50种全新赛季物品，包括<strong>“天使”的胜利女神、“士兵：76”的烧烤老板...</strong>
+			</div>
+		</div>
+	</body>
+</html>
