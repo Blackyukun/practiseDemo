@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>百度输入法</title>
+		<style>
+			body{font:15px/1.5 "微软雅黑";}
+			body,ul,li,button{margin: 0;padding: 0;}
+			ul{list-style-type: none;}
+			button{cursor: pointer;height: 25px;}
+			#test{
+				width: 100px;
+				margin: 10px auto;
+			}
+			#cha{
+				margin-top: 5px;
+				background: #fff;
+				border: 1px solid #9a99ff;
+				display: none;
+			}
+			#cha li{
+				width: 100%;
+				line-height: 24px;
+				vertical-align: top;
+				display: inline-block;
+			}
+			#close{
+				border-top: 1px solid #9a99ff;
+			}
+			#cha li a{
+				color: #4291f7;
+				padding: 0 5px;
+				text-decoration: none;
+				display: block;
+			}
+			#cha li a:hover{background: #3b80e8;}
+		</style>
+		<script>
+			window.onload = function() {
+				var butt = document.getElementsByTagName('button')[0];
+				var chas = document.getElementById('cha');
+				var close = document.getElementById('close');
+				
+				butt.onclick = function() {
+					if (chas.style.display==='block'){
+						chas.style.display = 'none';
+					} else{
+						chas.style.display = 'block';
+					}
+				}
+				close.onclick = function() {
+					chas.style.display = 'none';
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<button>百度输入法</button>
+			<ul id="cha">
+				<li>
+					<a href="javascript:;">手写</a>
+				</li>
+				<li>
+					<a href="javascript:;">拼音</a>
+				</li>
+				<li>
+					<a href="javascript:;">英文</a>
+				</li>
+				<li id="close">
+					<a href="javascript:;">关闭</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
