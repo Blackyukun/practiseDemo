@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数传参，改变div任意属性的值</title>
+		<style>
+			body,p{padding: 0;margin: 0;}
+			body{
+				color: #333;
+				font: 12px/1.5 "微软雅黑";
+				padding-top: 15px;
+			}
+			#test{
+				width: 300px;
+				margin: 0 auto;
+			}
+			p{margin-bottom: 10px;}
+			button{margin-right: 10px;}
+			label{
+				width: 5em;
+				display: inline-block;
+				text-align: right;
+			}
+			input{
+				padding: 3px;
+				font-family: inherit;
+				border: 1px solid #ccc;
+			}
+			#test-div{
+				color: #fff;
+				width: 180px;
+				height: 180px;
+				background: black;
+				margin: 0 auto;
+				padding: 10px;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var attrInput = document.getElementsByTagName('input');
+				var butt = document.getElementsByTagName('button');
+				var div = document.getElementById('test-div');
+				
+				butt[0].onclick = function() {
+					attrName = attrInput[0].value;
+					attrVal = attrInput[1].value;
+					div.style[attrName] = attrVal;
+				}
+				butt[1].onclick = function() {
+					div.removeAttribute('style');
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<p>
+				<label>属性名：</label>
+				<input type="text" value="width">
+			</p>
+			<p>
+				<label>属性值：</label>
+				<input type="text" value="1000px">
+			</p>
+			<p>
+				<label></label>
+				<button>设置</button>
+				<button>重置</button>
+			</p>
+		</div>
+		<div id="test-div">
+			输入需要设置的"属性名"和"属性值"，点击设置按钮查看效果。
+		</div>
+	</body>
+</html>
