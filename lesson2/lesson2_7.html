@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>简易选项卡</title>
+		<style>
+			body,ul,li{margin: 0;padding: 0;}
+			body{font:15px/1.5 "微软雅黑";}
+			#test{
+				width: 450px;
+				margin: 10px auto;
+			}
+			#tab{
+				overflow: hidden;
+				zoom: 1;
+				background: rgba(40,53,79,.9);
+				border: 1px solid rgba(40,53,79,.9);
+			}
+			#tab li{
+				float: left;
+				color: rgba(161, 166, 177, 1);
+				height: 30px;
+				line-height: 30px;
+				list-style-type: none;
+				padding: 0 20px;
+				cursor: pointer;
+			}
+			#tab li.current{
+				color:black;
+				background: #ccc;
+			}
+			#content{
+				border: 1px solid black;
+				border-top-width: 0;
+			}
+			#content ul{
+				line-height: 25px;
+				margin: 0 30px;
+				padding: 10px 0;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var tabs = document.getElementById('tab').children;
+				var contents = document.getElementById('content').getElementsByTagName('ul');
+				
+				for (var i=0; i<tabs.length; i++) {
+					tabs[i].index = i;
+					tabs[i].onmouseover = function() {
+						for (var a=0; a<tabs.length; a++) {
+							tabs[a].className = '';
+						}
+						this.className = 'current';
+						for (var n=0; n<contents.length; n++) {
+							contents[n].style.display = 'none';
+						}
+						contents[this.index].style.display = 'block';
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<ul id="tab">
+				<li class="current">麦克雷</li>
+				<li class>士兵76</li>
+				<li class>源氏</li>
+				<li class>黑百合</li>
+			</ul>
+			<div id="content">
+				<ul style="display:block;">
+					<li>麦克雷手中的六发左轮手枪是他的主要武器。</li>
+					<li>他可以迅速扣下扳机，打光所有子弹。</li>
+					<li>麦克雷向移动方向翻滚的同时</li>
+					<li>利索地重新装填“维和者”的子弹。</li>
+					<li>麦克雷扔出一枚会在数秒后迅速爆炸的闪光弹。</li>
+					<li>爆炸会使小范围内的敌人目眩。</li>
+					<li>集中、瞄准、拔枪。</li>
+					<li>麦克雷只需花费宝贵的数秒时间就可以锁定敌人</li>
+					<li>当麦克雷锁定敌人后，他会向每个被锁定的敌人射出子弹</li>
+					<li>敌人越虚弱，锁定速度就越快。</li>
+				</ul>
+				<ul>
+					<li>“士兵：76”的步枪在进行全自动脉冲射击的同时</li>
+					<li>还可以保持极限稳定。</li>
+					<li>微型火箭从士兵76的脉冲步枪中以螺旋方式同时射出。</li>
+					<li>火箭可以对小范围内的敌人造成爆炸伤害。</li>
+					<li>“士兵：76”可以在短时间内快速冲刺，</li>
+					<li>借此躲避火力或是冲向敌阵。</li>
+					<li>采取任何其他动作都会令疾跑终止。</li>
+					<li>“士兵：76”在地上放置一个生物发射器。</li>
+					<li>其能量可以治疗“士兵：76”和附近的队友。</li>
+					<li>“士兵：76”精准的目标锁定目镜可以</li>
+					<li>将准星锁定在最近的敌对目标身上。</li>
+					<li>如果敌人离开视野，“士兵：</li>
+					<li>76”可以快速锁定下一个目标。</li>
+					<li>他装备有最先进的武器</li>
+					<li>一把试验性的可以发射螺旋高爆火箭的脉冲步枪</li>
+				</ul>
+				<ul>
+					<li>源氏快速扔出3枚致命的手里剑。</li>
+					<li>按鼠标右键可以在更宽的范围内同时扔出3枚手里剑。</li>
+					<li>格挡向你射来的飞射物并将其向你瞄准方向反弹回去，</li>
+					<li>同时还能格挡近战攻击。</li>
+					<li>快速向前冲刺，对遇到的敌人造成伤害</li>
+					<li>消灭敌人可以重置冷却时间。</li>
+					<li>源氏在短时间内拔出武士刀。</li>
+					<li>在入鞘之前，源氏可以对敌人造成巨大伤害。</li>
+					<li>源氏可以用致命而准确的手里剑重创敌人</li>
+					<li>他的高科技武士刀可以用来反弹敌人的远程攻击</li>
+					<li>或是对敌人施展一次快速攻击。</li>
+					<li>半机械人岛田源氏已经接受了他曾经排斥的强化躯体</li>
+					<li>并因此发现了更高境界的人性。</li>
+					<li>身可死，武士之名不可弃。</li>
+					<li>身可死，武士之名不可弃。”</li>
+				</ul>
+				<ul>
+					<li>“黑百合”的多功能狙击步枪是一种理想的远距离狙击武器</li>
+					<li>而当目标靠近后，</li>
+					<li>这把武器还可以切换为全自动步枪模式。</li>
+					<li>“黑百合”可以向目标位置射出抓钩</li>
+					<li>当抓钩遇到可攀登表面时就会迅速回收，</li>
+					<li>将“黑百合”拉向目标位置。</li>
+					<li>这一技能可以让她纵览整个战场，躲避或包抄敌人</li>
+					<li>“黑百合”的剧毒诡雷可以附着在几乎任何表面并快速启动</li>
+					<li>当目标靠近诡雷的动感触发器范围之内时就会爆炸</li>
+					<li>对范围内所有敌人释放毒气。</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
