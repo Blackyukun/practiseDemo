@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>单一按钮显示/隐藏</title>
+		<style>
+			body,div,ul,li,h2{margin: 0;padding: 0;}
+			body{font: 12px/1.5 "微软雅黑";}
+			ul{list-style-type: none;}
+			#test{
+				width: 150px;
+				margin: 10px auto;
+				border: 1px solid #aaa;
+			}
+			#test h2{
+				color: #fff;
+				font-size: 15px;
+				font-weight: 400;
+				cursor: pointer;
+				border: 1px solid;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 10px;
+				background: #93a4b1 url(images/ico.gif) 130px 15px no-repeat;
+				border-color: #fff #e9edf2;
+			}
+			#test h2.open{
+				background-position: 130px -12px;
+			}
+			#test ul{
+				border-top: 1px solid #DEE3E6;
+			}
+			#test li{
+				height: 25px;
+				line-height: 25px;
+				vertical-align: top;
+				border-bottom: 1px solid #ccc;
+			}
+			#test a{
+				color: #6b7980;
+				background: rgba(255,255,255,.3);
+				text-decoration: none;
+				padding: 0 10px;
+				display: block;
+			}
+			#test a:hover{
+				background: #fff;
+				text-decoration: underline;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var butt = document.getElementsByTagName('h2')[0];
+				var listUl = document.getElementsByTagName('ul')[0];
+				
+				butt.onclick = function() {
+					if (listUl.style.display === 'none') {
+						listUl.style.display = 'block';
+					} else{
+						listUl.style.display = 'none'
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<h2>英雄列表...</h2>
+			<ul>
+				<li>
+					<a href="javascript:;">麦克雷</a>
+				</li>
+				<li>
+					<a href="javascript:;">士兵：76</a>
+				</li>
+				<li>
+					<a href="javascript:;">源氏</a>
+				</li>
+				<li>
+					<a href="javascript:;">半藏</a>
+				</li>
+				<li>
+					<a href="javascript:;">猎空</a>
+				</li>
+				<li>
+					<a href="javascript:;">黑百合</a>
+				</li>
+				<li>
+					<a href="javascript:;">禅雅塔</a>
+				</li>
+				<li>
+					<a href="javascript:;">法老之鹰</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
