@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>提示框效果</title>
+		<style>
+			body,div,h2,ul,li{margin: 0;padding: 0;}
+			body{font:12px/1.5 "微软雅黑";}
+			ul{list-style-type: none;}
+			#test{
+				width: 660px;
+				border: 1px solid #333;
+				margin: 10px auto;
+				padding: 0 0 10px 10px;
+			}
+			#test h2{
+				line-height: 30px;
+				text-align: center;
+				margin-top: 10px;
+			}
+			#test ul:after{
+				content: "";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			#test ul{zoom:1;}
+			#test ul li{
+				position: relative;
+				float: left;
+				border: 1px solid #333;
+				margin: 10px 10px 0 0;
+				display: inherit;
+			}
+			#test ul li img{
+				position: absolute;
+				top: -14px;
+				left: -14px;
+				display: none;
+				border: 2px solid #999;
+				cursor: pointer;
+			}
+			#test ul li a{
+				color: #666;
+				width: 100px;
+				height: 172px;
+				display: block;
+				background: #f0f0f0;
+				text-decoration: none;
+				padding: 10px;
+			}
+			#test ul li a strong{display: block;}
+			.current{z-index: 1;}
+		</style>
+		<script>
+			window.onload = function() {
+				var imgLis = document.getElementsByTagName('li');
+				var imgs = document.getElementsByTagName('img');
+				var allA = document.getElementsByTagName('a');
+				
+				for (var i=0; i<imgLis.length; i++) {
+					allA[i].index = imgs[i].index = i;
+					allA[i].onmouseover = function() {
+						imgLis[this.index].className = 'current';
+						imgs[this.index].style.display = 'block';
+					}
+					allA[i].onmouseout = function() {
+						imgLis[this.index].className = '';
+						imgs[this.index].style.display = 'none';
+					}
+					imgs[i].onmouseover = function() {
+						imgLis[this.index].className = 'current';
+						this.style.display = 'block';
+					}
+					imgs[i].onmouseout = function() {
+						imgLis[this.index].className = '';
+						this.style.display = 'none';
+					}
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<h2>守望先锋英雄--鼠标移过显示英雄</h2>
+			<ul>
+				<li class>
+					<a href="javascript:;" title="麦克雷">
+						<strong>麦克雷</strong>
+						正义可不会伸张自己。
+					</a>
+					<img src="images/img1.jpg" alt="麦克雷">
+				</li>
+				<li class>
+					<a href="javascript:;" title="源氏">
+						<strong>源氏</strong>
+						身可死，武士之名不可弃。
+					</a>
+					<img src="images/img2.jpg" alt="源氏">
+				</li>
+				<li class>
+					<a href="javascript:;" title="士兵76">
+						<strong>士兵76</strong>
+						我们现在都是士兵了。
+					</a>
+					<img src="images/img3.jpg" alt="士兵76">
+				</li>
+				<li class>
+					<a href="javascript:;" title="黑影">
+						<strong>黑影</strong>
+						我可以黑掉任何东西……以及任何人。
+					</a>
+					<img src="images/img4.jpg" alt="黑影">
+				</li>
+				<li class>
+					<a href="javascript:;" title="死神">
+						<strong>死神</strong>
+						死神来了。
+					</a>
+					<img src="images/img5.jpg" alt="死神">
+				</li>
+				<li class>
+					<a href="javascript:;" title="猎空">
+						<strong>猎空</strong>
+						不用担心，交给我吧！
+					</a>
+					<img src="images/img6.jpg" alt="猎空">
+				</li>
+				<li class>
+					<a href="javascript:;" title="半藏">
+						<strong>半藏</strong>
+						荣誉之于生死，救赎之于荣誉。
+					</a>
+					<img src="images/img7.jpg" alt="半藏">
+				</li>
+				<li class>
+					<a href="javascript:;" title="黑百合">
+						<strong>黑百合</strong>
+						一枪，一个。
+					</a>
+					<img src="images/img8.jpg" alt="黑百合">
+				</li>
+				<li class>
+					<a href="javascript:;" title="D.va">
+						<strong>D.va</strong>
+						玩游戏就是要赢。
+					</a>
+					<img src="images/img9.jpg" alt="D.va">
+				</li>
+				<li class>
+					<a href="javascript:;" title="堡垒">
+						<strong>堡垒</strong>
+						哔哔哔哔哔哔...
+					</a>
+					<img src="images/img10.jpg" alt="堡垒">
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
