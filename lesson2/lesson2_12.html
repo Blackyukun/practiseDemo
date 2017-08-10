@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>复选框(checkbox)全选/全不选/反选</title>
+		<style>
+			body,dl,dt,dd,p{margin: 0;padding: 0;}
+			body{font:12px/1.5 "微软雅黑";}
+			label,input,a{vertical-align: middle;}
+			label{padding: 0 10px 0 5px;}
+			a{color: #09f;text-decoration: none;}
+			a:hover{color: red;}
+			dl{
+				width: 120px;
+				margin: 10px auto;
+				padding: 10px 5px;
+				border: 1px solid #666;
+				border-radius: 5px;
+				background: #fafafa;
+			}
+			dt{
+				padding-bottom: 10px;
+				border-bottom: 1px solid #666;
+			}
+			dt label{font-weight: 700;}
+			p{margin-top: 10px;}
+		</style>
+		<script src="js/lesson2_12.js"></script>
+	</head>
+	<body>
+		<dl>
+			<dt>
+				<input type="checkbox" id="checkAll">
+				<label>全选</label>
+				<a href="javascript:;">反选</a>
+			</dt>
+			<dd>
+				<p>
+					<input type="checkbox" name="item">
+					<label>风流倜傥</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>气宇轩昂</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>才貌双全</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>玉树临风</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>惊才风逸</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>温文尔雅 </label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>品貌非凡</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>翩翩少年</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>逸群之才</label>
+				</p>
+				<p>
+					<input type="checkbox" name="item">
+					<label>清新俊逸</label>
+				</p>
+			</dd>
+		</dl>
+		<center>
+			当用户勾上“全选”时，自动选中所有选项，并把“全选”变成“全不选”<br>
+			当用户去掉“全不选”时，自动不选中所有选项<br>
+			当用户点击“反选”时，自动把所有选项状态反转（选中的变为未选，未选的变为选中）<br>
+			当用户把所有选项都手动勾上时，“全选”被自动勾上，并变为“全不选”<br>
+			当用户手动去掉选中至少一个选项时，“全不选”自动被去掉选中，并变为“全选”。
+		</center>
+	</body>
+</html>
