@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>累加按钮，自加1</title>
+		<style>
+			button{
+				font: 15px/1.5 "微软雅黑";
+				padding: 0 3px;
+			}
+			strong{color: red;}
+		</style>
+		<script>
+			window.onload = function() {
+				var butt = document.getElementsByTagName('button')[0];
+				var countStrong = document.getElementsByTagName('strong')[0];
+				var count = 0;
+				
+				butt.onclick = function() {
+					
+					countStrong.innerHTML = ++count;
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<center>
+			<button>
+				喜欢我就点我：<strong>0</strong>
+			</button>
+		</center>
+	</body>
+</html>
