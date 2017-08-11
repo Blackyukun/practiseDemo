@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>页面加载后累加，自加1</title>
+		<style>
+			body{
+				background:black;
+				color:white;
+				font: 700 30px/1.5 "微软雅黑";
+				text-align: center;
+			}
+			span{color: red;}
+		</style>
+		<script>
+			window.onload = function() {
+				var timeSpan = document.getElementsByTagName('span')[0];
+				var time = 0;
+				
+				function updateTime() {
+					timeSpan.innerText = ++time;
+				}
+				setInterval(updateTime, 1000);
+				updateTime();
+			}
+		</script>
+	</head>
+	<body>
+		你停留的时间：<span></span>
+	</body>
+</html>
