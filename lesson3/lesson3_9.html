@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>倒计时时钟</title>
+		<style>
+			body,div{margin: 0;padding: 0;}
+			body{
+				color:#fff;
+				font: 16px/1.5 "微软雅黑";
+			}
+			#test{
+				width: 300px;
+				text-align: center;
+				background: black;
+				margin: 10px auto;
+				padding: 20px 0;
+			}
+			input{
+				width: 283px;
+				height: 50px;
+				border: 0;
+				margin-top: 20px;
+				background: url(images/btn-1.png) no-repeat;
+				cursor: pointer;
+			}
+			input.current{background-position: 0 -50px;}
+			span{
+				color: #000;
+				width: 80px;
+				line-height: 2;
+				background: #fbfbfb;
+				border: 2px solid #999;
+				margin: 0 10px;
+				padding: 0 10px;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var butt = document.getElementsByTagName('input')[0];
+				var timer = null;
+				
+				butt.onfocus = function() {
+					this.blur();// 当光标移到a标签是使其失去焦点
+				};
+				butt.onclick = function() {
+					this.className == '' ? (timer=setInterval(updateTime,1000),updateTime()) : (clearInterval(timer));
+					this.className = this.className == '' ? 'current' : '';
+				};
+				function format(a) {
+					return a.toString().replace(/^(\d)$/,'0$1');
+				}
+				function updateTime () {
+					var spans = document.getElementsByTagName('span');
+					var remain = spans[0].innerHTML.replace(/^0/,'')*60 + parseInt(spans[1].innerHTML.replace(/^0/,''));
+					if (remain <= 0) {
+						clearInterval(timer);
+						return;
+					}
+					remain--;
+					spans[0].innerHTML = format(parseInt(remain/60));
+					remain %= 60;
+					spans[1].innerHTML = format(parseInt(remain));
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="test">
+			<span>01</span>
+			分钟
+			<span>40</span>
+			秒
+			<input type="button" value class> 
+		</div>
+	</body>
+</html>
